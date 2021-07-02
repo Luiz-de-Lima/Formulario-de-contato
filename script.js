@@ -1,17 +1,19 @@
 const btn = document.querySelector('button')
 
-const nome = document.querySelector('input[name="nome"]').value
-
-const subject = document.querySelector('input[name="assunto"]').value
-const message = document.querySelector('textarea[name="mensagem"]').value
-const url = 'https://app-api-class.herokuapp.com/contact'
 
 
-let resp = document.querySelector('p[name="resposta"]')
+
+
 
 
 btn.onclick = function(event) {
     event.preventDefault()
+
+    const nome = document.querySelector('input[name="nome"]').value
+
+    const subject = document.querySelector('input[name="assunto"]').value
+    const message = document.querySelector('textarea[name="mensagem"]').value
+    const url = 'https://app-api-class.herokuapp.com/contact'
 
     const dados = {
         method: "POST",
@@ -32,9 +34,6 @@ btn.onclick = function(event) {
                 .then((result) =>
 
                     console.log(result)
-
-
-
                 )
 
         })
